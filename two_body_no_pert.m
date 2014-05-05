@@ -30,7 +30,7 @@ function dXdt = state_transition_fn(X, t)
     y = X(2);
     z = X(3);
     
-    dXdt = zeros(1, size(X));
+    dXdt = zeros(1, length(X));
     dXdt(1) = X(4);
     dXdt(2) = X(5); % dX/dt is velocity
     dXdt(3) = X(6);
@@ -40,5 +40,7 @@ function dXdt = state_transition_fn(X, t)
     dXdt(4) = -mu*x/r^3; % acceleration components 
     dXdt(5) = -mu*y/r^3;
     dXdt(6) = -mu*z/r^3;
+    
+    dXdt(7) = mu;
 
 end
